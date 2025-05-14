@@ -15,23 +15,62 @@
  */
 package com.ktbl.vo;
 
-import io.swagger.v3.oas.annotations.media.Schema;
+//import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 @Data
-@Schema(description = "返回结果集")
+//@Schema(description = "返回结果集")
 public class Ret<T> {
-    @Schema(description = "是否成功", example = "", required = false)
+    //@Schema(description = "是否成功", example = "", required = false)
     private boolean success;
-    @Schema(description = "返回编码", example = "", required = false)
+   // @Schema(description = "返回编码", example = "", required = false)
     private String code = "200";//成功
-    @Schema(description = "提示消息", example = "", required = false)
+   // @Schema(description = "提示消息", example = "", required = false)
     private String msg;
-    @Schema(description = "返回数据", example = "", required = false)
+   // @Schema(description = "返回数据", example = "", required = false)
     private T data;
-    @Schema(description = "执行时间", example = "", required = false)
+    //@Schema(description = "执行时间", example = "", required = false)
     private long runTime;
 
+    public boolean isSuccess() {
+        return success;
+    }
+
+    public void setSuccess(boolean success) {
+        this.success = success;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+
+    public long getRunTime() {
+        return runTime;
+    }
+
+    public void setRunTime(long runTime) {
+        this.runTime = runTime;
+    }
 
     public static <T> Ret<T> success(T data) {
         Ret ret = new Ret();

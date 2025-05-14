@@ -3,8 +3,7 @@ package com.ktbl.compare;
 import com.ktbl.vo.Ret;
 import com.ktbl.words.CmpComparator;
 import com.ktbl.words.DocConfig;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
+
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.Data;
@@ -25,7 +24,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-@Tag(name = "06.文档比较接口")
+//@Tag(name = "06.文档比较接口")
 @RestController
 @RequestMapping("/api")
 public class CompareController {
@@ -34,7 +33,7 @@ public class CompareController {
     private static final String UPLOAD_DIR = "uploads/";
 
     // 文件上传接口
-    @Operation(summary = "文件上传")
+//    @Operation(summary = "文件上传")
     @PostMapping("/upload")
     public Ret handleFileUpload(@RequestParam("file") MultipartFile file) {
         try {
@@ -59,7 +58,7 @@ public class CompareController {
         }
     }
 
-    @Operation(summary = "文档比较")
+//    @Operation(summary = "文档比较")
     @PostMapping("/compare")
     public void compareFiles(@RequestBody CompareRequest request, HttpServletRequest request1, HttpServletResponse response) {
         try {
