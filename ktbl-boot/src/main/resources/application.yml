@@ -4,3 +4,6 @@ spring:
 
 server:
   port: 8041
+
+ktbl:
+  contextPath:/

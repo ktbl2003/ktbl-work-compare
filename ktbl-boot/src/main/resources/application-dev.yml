@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: ktbl-main
+
+server:
+  port: 8041
+
+ktbl:
+  contextPath:/
+
+com:
+  ktbl:
+    auth:
+      paths: /
